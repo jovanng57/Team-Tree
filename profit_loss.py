@@ -10,7 +10,7 @@ import csv
 
 def profitloss_function():
 
-    # Initialize empty lists to store the CSV data and cash changes
+    # Initialize empty lists to store the CSV data and profit changes
 
     csv_data = []
 
@@ -44,7 +44,7 @@ def profitloss_function():
 
  
 
-    # Calculate the cash changes for each day
+    # Calculate the profit changes for each day
 
     for day in range(1, len(csv_data)):
 
@@ -54,7 +54,7 @@ def profitloss_function():
 
  
 
-    # Check if there is a surplus in cash every day
+    # Check if there is a surplus in profit every day
 
     is_surplus_everyday = True
 
@@ -67,7 +67,7 @@ def profitloss_function():
             break
 
  
-
+    # Find the highest increase in profit if profit increases everyday.
     if is_surplus_everyday:
 
         highest_profit_surplus = profit_changes[0]
@@ -86,7 +86,7 @@ def profitloss_function():
 
  
 
-        # Write the highest cash surplus information to summary_report.txt
+        # Write the highest profit surplus information to summary_report.txt
 
         with filepath.open(mode="a", encoding="UTF-8", newline="") as file:
 
@@ -96,7 +96,7 @@ def profitloss_function():
 
  
 
-    # If there is not a surplus every day, report days with cash deficits
+    # If there is not a surplus every day, report days with profit deficits
 
     else:
 
